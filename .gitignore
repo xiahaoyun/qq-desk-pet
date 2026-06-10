@@ -1,0 +1,14 @@
+.DS_Store
+.playwright-mcp/
+node_modules/
+dist/
+release/
+run/
+image/
+img/
+public/assets/source-photos/
+public/assets/generated/qq-*-strip-source.png
+*.log
+npm-debug.log*
+package.tmp.json
+build/icon.iconset/

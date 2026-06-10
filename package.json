@@ -1,0 +1,67 @@
+{
+  "name": "qq-desk-pet",
+  "version": "0.1.0",
+  "description": "A cross-platform desktop pet for QQ the cat.",
+  "main": "src/main/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "electron": "electron .",
+    "start": "electron .",
+    "build:web": "vite build && node scripts/prune-dist-assets.mjs",
+    "predist:mac": "npm run build:web",
+    "dist:mac": "electron-builder --mac",
+    "predist:win": "npm run build:web",
+    "dist:win": "electron-builder --win",
+    "predist": "npm run build:web",
+    "dist": "electron-builder --mac --win"
+  },
+  "keywords": [
+    "desktop-pet",
+    "electron",
+    "cat"
+  ],
+  "author": "Yun",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^10.1.0"
+  },
+  "devDependencies": {
+    "electron": "^37.8.0",
+    "electron-builder": "^26.0.12",
+    "vite": "^8.0.7"
+  },
+  "build": {
+    "appId": "com.yun.qqdeskpet",
+    "productName": "QQ",
+    "icon": "build/icon",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "build/icon.png",
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "icon": "build/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
