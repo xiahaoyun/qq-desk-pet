@@ -19,6 +19,12 @@
 2. 如果下载的是 DMG，打开后把 `QQ` 拖到 Applications / 应用程序。
 3. 第一次打开时，如果 macOS 提示来自未验证开发者，请在 Finder 里右键应用，选择“打开”，再确认打开。
 
+### Windows
+
+1. 打开 [GitHub Releases](https://github.com/xiahaoyun/qq-desk-pet/releases) 下载最新的 `QQ Setup *.exe` 或 `QQ *.exe`。
+2. `QQ Setup *.exe` 是安装包，双击后按提示安装。
+3. `QQ *.exe` 是 portable 版本，不需要安装，双击即可运行。
+
 ### 从源码运行
 
 需要 Node.js 20 或更新版本。
