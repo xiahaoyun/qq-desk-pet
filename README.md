@@ -21,9 +21,9 @@
 
 ### Windows
 
-1. 打开 [GitHub Releases](https://github.com/xiahaoyun/qq-desk-pet/releases) 下载最新的 `QQ Setup *.exe` 或 `QQ *.exe`。
-2. `QQ Setup *.exe` 是安装包，双击后按提示安装。
-3. `QQ *.exe` 是 portable 版本，不需要安装，双击即可运行。
+1. 打开 [GitHub Releases](https://github.com/xiahaoyun/qq-desk-pet/releases) 下载最新的 `QQ.Setup.*.exe` 或 `QQ.*.exe`。
+2. `QQ.Setup.*.exe` 是安装包，双击后按提示安装。
+3. `QQ.*.exe` 是 portable 版本，不需要安装，双击即可运行。
 
 ### 从源码运行
 
