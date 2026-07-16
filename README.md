@@ -13,6 +13,12 @@
 
 ## 安装
 
+### 推荐下载（OSS 直链）
+
+- macOS Intel/x86：[`QQ-0.1.0-x64.dmg`](https://24h-plog.oss-cn-beijing.aliyuncs.com/qq-desk-pet/v0.1.0/QQ-0.1.0-x64.dmg)
+- macOS Apple Silicon/ARM：[`QQ-0.1.0-arm64.dmg`](https://24h-plog.oss-cn-beijing.aliyuncs.com/qq-desk-pet/v0.1.0/QQ-0.1.0-arm64.dmg)
+- Windows x64 安装包：[`QQ.Setup.0.1.0-x64.exe`](https://24h-plog.oss-cn-beijing.aliyuncs.com/qq-desk-pet/v0.1.0/QQ.Setup.0.1.0-x64.exe)
+
 ### macOS
 
 1. 打开 [GitHub Releases](https://github.com/xiahaoyun/qq-desk-pet/releases) 下载最新的 `QQ-*.dmg` 或 `QQ-*-mac.zip`。
