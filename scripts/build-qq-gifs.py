@@ -7,7 +7,6 @@ ROOT = Path("public/assets")
 POSE_ROOT = ROOT / "generated" / "single-poses"
 KEY_POSE_ROOT = ROOT / "generated" / "key-poses"
 ACTIONS = ["idle", "walk", "sit", "jump", "wave", "sleep"]
-FRAME_COUNT = 8
 CANVAS_SIZE = 512
 MAX_PET_SIZE = 430
 
@@ -78,9 +77,18 @@ KEY_POSE_SEQUENCES = {
     "idle": [0, 0, 2, 0, 1, 0, 2, 0],
     "sit": [1, 2, 1, 3, 1, 2, 1, 3],
     "jump": [0, 1, 2, 2, 1, 0, 0, 0],
-    "walk": [0, 1, 2, 1, 0, 2, 1, 0],
+    "walk": [0, 1, 2, 1, 0, 2, 1, 0, 1, 2, 1, 0],
     "wave": [2, 0, 1, 3, 1, 0, 2, 0],
     "sleep": [0, 0, 1, 1, 0, 0, 1, 1],
+}
+
+ACTION_DURATIONS = {
+    "walk": 95,
+    "jump": 95,
+    "wave": 130,
+    "sit": 180,
+    "idle": 220,
+    "sleep": 300,
 }
 
 
@@ -203,7 +211,7 @@ def build_action(action):
 
 
 def save_animation(action, frames):
-    duration = 180 if action != "sleep" else 260
+    duration = ACTION_DURATIONS[action]
     frames[0].save(
         ROOT / f"qq-{action}.webp",
         save_all=True,

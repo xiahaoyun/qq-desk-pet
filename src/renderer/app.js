@@ -39,10 +39,15 @@ const stage = document.querySelector('.stage');
 const controls = document.querySelectorAll('[data-pet-action]');
 const closeButton = document.querySelector('[data-close]');
 const assets = document.querySelectorAll('[data-asset-action]');
+const previewDirection = new URLSearchParams(window.location.search).get('direction');
 const shortActionDuration = 3600;
 const sleepActionDuration = 15 * 60 * 1000;
 let actionTimer;
 let idleCycle = 0;
+
+if (!window.deskPet && ['left', 'right'].includes(previewDirection)) {
+  stage.dataset.direction = previewDirection;
+}
 
 function setAction(action, options = {}) {
   const { autoIdle = false, direction } = options;

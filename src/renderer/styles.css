@@ -48,6 +48,8 @@ html[data-runtime="preview"] body {
   filter: drop-shadow(0 16px 18px rgba(28, 24, 20, 0.2));
   transform: scaleX(var(--pet-facing, 1));
   transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .stage[data-direction="left"] {
@@ -76,7 +78,7 @@ html[data-runtime="preview"] body {
 }
 
 .stage[data-action="walk"] .pet-shell {
-  animation: walk-bob 0.62s ease-in-out infinite;
+  animation: walk-bob 1.14s ease-in-out infinite;
 }
 
 .controls {
@@ -127,8 +129,8 @@ html[data-runtime="preview"] body {
 }
 
 @keyframes walk-bob {
-  0%, 100% { transform: scaleX(var(--pet-facing, 1)) translateY(0); }
-  50% { transform: scaleX(var(--pet-facing, 1)) translateY(-5px); }
+  0%, 50%, 100% { transform: scaleX(var(--pet-facing, 1)) translateY(0); }
+  25%, 75% { transform: scaleX(var(--pet-facing, 1)) translateY(-3px); }
 }
 
 @keyframes jump-lift {
