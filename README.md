@@ -16,14 +16,30 @@
 ### macOS
 
 1. 打开 [GitHub Releases](https://github.com/xiahaoyun/qq-desk-pet/releases) 下载最新的 `QQ-*.dmg` 或 `QQ-*-mac.zip`。
-2. 如果下载的是 DMG，打开后把 `QQ` 拖到 Applications / 应用程序。
-3. 第一次打开时，如果 macOS 提示来自未验证开发者，请在 Finder 里右键应用，选择“打开”，再确认打开。
+2. 推荐下载 `QQ-*-arm64.dmg`，适合 Apple Silicon 机型（M1/M2/M3/M4 等）。如果下载的是 DMG，打开后把 `QQ` 拖到 Applications / 应用程序。
+3. 第一次打开时，如果 macOS 提示来自未验证开发者，请在 Finder 里右键 `QQ.app`，选择“打开”，再确认打开。
+4. 如果仍然提示“已损坏，无法打开”或被系统拦截，通常是下载文件带有 macOS quarantine 隔离属性。可以在终端执行下面的命令后再打开：
+
+```bash
+xattr -dr com.apple.quarantine /Applications/QQ.app
+```
+
+如果你没有把 QQ 放到应用程序目录，请把命令里的 `/Applications/QQ.app` 替换成实际路径，例如：
+
+```bash
+xattr -dr com.apple.quarantine ~/Downloads/QQ.app
+```
+
+说明：当前包会签名，但没有走 Apple notarization 公证，所以部分 macOS 版本仍可能显示安全提示。上面的命令只是移除下载隔离标记，不会修改应用内容。
 
 ### Windows
 
-1. 打开 [GitHub Releases](https://github.com/xiahaoyun/qq-desk-pet/releases) 下载最新的 `QQ.Setup.*.exe` 或 `QQ.*.exe`。
-2. `QQ.Setup.*.exe` 是安装包，双击后按提示安装。
-3. `QQ.*.exe` 是 portable 版本，不需要安装，双击即可运行。
+1. 打开 [GitHub Releases](https://github.com/xiahaoyun/qq-desk-pet/releases) 下载最新的 Windows 包。
+2. 普通 Windows 电脑优先下载 x64 版本：
+   - `QQ.Setup.*.exe`：安装版，双击后按提示安装。
+   - `QQ.*.exe`：portable 便携版，不需要安装，双击即可运行。
+3. 如果你使用 Windows on ARM 设备，再下载文件名带 `arm64` 的版本。
+4. 如果 Windows SmartScreen 提示风险，点击“更多信息”，确认发布来源是本仓库下载的文件后选择“仍要运行”。
 
 ### 从源码运行
 
